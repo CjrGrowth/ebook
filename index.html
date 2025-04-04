@@ -71,6 +71,15 @@
             height: auto;
             border-radius: 5px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            cursor: zoom-in;
+            transition: transform 0.3s;
+        }
+        
+        .book-cover img:hover {
+            transform: scale(1.8);
+            z-index: 100;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
         
         .book-contents {
@@ -81,6 +90,22 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             border: 1px solid #f0e6ee;
+        }
+        
+        .book-contents img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            cursor: zoom-in;
+            transition: transform 0.3s;
+        }
+        
+        .book-contents img:hover {
+            transform: scale(1.8);
+            z-index: 100;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
         
         /* Countdown Timer Styles */
@@ -214,20 +239,18 @@
             color: #8e6d8b;
         }
         
-        /* Bonus Section */
+        /* Bonus Section - MODIFIED */
         .bonuses {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 15px;
             margin: 25px 0;
         }
         
         .bonus {
-            flex-basis: 30%;
             background: #f5f0f9;
-            padding: 15px;
+            padding: 20px;
             border-radius: 8px;
-            margin-bottom: 15px;
             text-align: center;
             border: 1px solid #e0d0df;
             position: relative;
@@ -266,7 +289,7 @@
         
         /* Responsive Adjustments */
         @media (max-width: 768px) {
-            .benefit-item, .bonus {
+            .benefit-item {
                 flex-basis: 100%;
             }
             
@@ -280,6 +303,11 @@
             
             .book-preview {
                 flex-direction: column;
+            }
+            
+            .book-cover img:hover, 
+            .book-contents img:hover {
+                transform: scale(1.5);
             }
         }
     </style>
@@ -302,13 +330,13 @@
                 <div class="book-cover">
                     <h3 style="color: #a37c40;">Capa do Ebook</h3>
                     <img src="capa ebook.jpeg" alt="Ebook Ovos de Colher - Capa" style="max-height: 400px;">
-                    <p style="margin-top: 10px; font-style: italic;">Design premium com fotos profissionais</p>
+                    <p style="margin-top: 10px; font-style: italic;">Clique na imagem para ampliar</p>
                 </div>
                 
                 <div class="book-contents">
                     <h3 style="color: #a37c40;">Sumário Completo</h3>
                     <img src="sumario ebook.jpeg" alt="Sumário do Ebook" style="max-height: 400px;">
-                    <p style="margin-top: 10px; font-style: italic;">+150 páginas de conteúdo prático</p>
+                    <p style="margin-top: 10px; font-style: italic;">Clique na imagem para ampliar</p>
                 </div>
             </div>
         </div>
@@ -351,7 +379,7 @@
             <h2 style="color: #a37c40; margin-top: 0;">OFERTA EXCLUSIVA: 30% DE DESCONTO!</h2>
             <p style="font-size: 1.3rem; margin-bottom: 5px;"><s>De R$ 97,90</s></p>
             <p style="font-size: 2rem; font-weight: bold; color: #a37c40; margin: 5px 0;">POR APENAS R$ 67,90</p>
-            <p style="font-size: 1.1rem;">ou 3x de R$ 23,37</p>
+            <p style="font-size: 1.1rem;">ou 3x de R$ 23,37 (com taxa)</p>
             
             <div class="countdown">
                 ✨ RESTAM APENAS <span id="copies-left" class="highlight">10</span> CÓPIAS!<br>
@@ -363,21 +391,26 @@
             <p style="font-size: 0.9rem; margin-top: 10px;">✅ Download Imediato • ✅ Garantia de 7 Dias</p>
         </div>
 
-        <!-- Bonuses Section -->
+        <!-- Bonuses Section - MODIFIED -->
         <div class="section">
             <h2>🎁 BÔNUS EXCLUSIVOS (GRÁTIS!)</h2>
             <div class="bonuses">
                 <div class="bonus">
                     <h3>1️⃣ Checklist de Higiene (ANVISA)</h3>
-                    <p>Evite multas e contaminações com este guia completo</p>
+                    <p>Documento essencial para produção profissional e vendas seguras, baseado nas normas da ANVISA e vigilâncias sanitárias municipais.</p>
+                    <p style="font-weight: bold; color: #8e6d8b; margin-top: 10px;">✔ Evite multas de até R$5.000</p>
                 </div>
+                
                 <div class="bonus">
-                    <h3>2️⃣ Lista de Fornecedores</h3>
-                    <p>Onde comprar materiais com até 40% de desconto</p>
+                    <h3>2️⃣ Lista de Fornecedores Confiáveis</h3>
+                    <p>Onde comprar materiais com até 40% de desconto, testados e aprovados por confeiteiros profissionais.</p>
+                    <p style="font-weight: bold; color: #8e6d8b; margin-top: 10px;">✔ Economize até R$1.200/ano</p>
                 </div>
+                
                 <div class="bonus">
-                    <h3>3️⃣ Modelos de Etiquetas</h3>
-                    <p>Prontos para personalizar no Canva</p>
+                    <h3>3️⃣ Modelos de Etiquetas Editáveis</h3>
+                    <p>Prontos para personalizar no Canva com seu logo e informações, aumentando o valor percebido em 40%.</p>
+                    <p style="font-weight: bold; color: #8e6d8b; margin-top: 10px;">✔ Destaque-se da concorrência</p>
                 </div>
             </div>
         </div>
