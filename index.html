@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ebook Ovos de Colher - Transforme sua Paixão por Doces em Lucro!</title>
+    <title>Ebook Ovos de Colher - Receitas Premium para Lucrar na Páscoa</title>
     <style>
         /* Global Styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #5a4a42;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #faf6f9;
         }
         
         .container {
@@ -23,40 +23,83 @@
         
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, #8e2de2, #4a00e0);
-            color: white;
+            background: linear-gradient(135deg, #f8e1f4, #e3f2fd);
+            color: #5a4a42;
             padding: 40px 20px;
             text-align: center;
             border-radius: 0 0 20px 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-bottom: 3px solid #d4af37;
         }
         
         h1 {
             font-size: 2.5rem;
             margin-bottom: 15px;
+            color: #8e6d8b;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         
         .subtitle {
             font-size: 1.3rem;
             margin-bottom: 25px;
+            color: #7b8b9b;
+        }
+        
+        /* Book Preview Section */
+        .book-preview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            align-items: center;
+        }
+        
+        .book-cover {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #f0e6ee;
+        }
+        
+        .book-cover img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        
+        .book-contents {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #f0e6ee;
         }
         
         /* Countdown Timer Styles */
         .offer-container {
             position: relative;
-            background: #fff5f5;
-            border: 1px solid #ffcccc;
-            padding: 25px;
-            border-radius: 10px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
             margin: 30px 0;
             text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 2px dashed #d4af37;
         }
         
         .live-badge {
             position: absolute;
             top: -15px;
             right: 20px;
-            background: #ff0000;
+            background: #8e6d8b;
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -68,19 +111,20 @@
         .countdown {
             font-size: 1.5rem;
             margin: 15px 0;
+            color: #8e6d8b;
         }
         
         .highlight {
-            color: #ff0000;
+            color: #a37c40;
             font-weight: bold;
             font-size: 2rem;
         }
         
         /* Button Styles */
         .cta-button {
-            background: #ff0000;
+            background: #4CAF50;
             color: white;
-            padding: 15px 30px;
+            padding: 16px 32px;
             border-radius: 30px;
             font-weight: bold;
             text-decoration: none;
@@ -90,13 +134,13 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
         }
         
         .cta-button:hover {
-            background: #e60000;
+            background: #3e8e41;
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(255, 0, 0, 0.4);
+            box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
         }
         
         .pulse {
@@ -113,18 +157,22 @@
         .section {
             background: white;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin-bottom: 30px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border: 1px solid #f0e6ee;
         }
         
         h2 {
-            color: #4a00e0;
+            color: #8e6d8b;
             margin-top: 0;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 10px;
+            display: inline-block;
         }
         
         h3 {
-            color: #8e2de2;
+            color: #a37c40;
         }
         
         .benefits {
@@ -151,17 +199,19 @@
         
         /* Testimonial Styles */
         .testimonial {
-            background: #f0f7ff;
+            background: #f5f0f9;
             padding: 20px;
-            border-left: 4px solid #4a00e0;
+            border-left: 4px solid #d4af37;
             margin: 20px 0;
             font-style: italic;
+            border-radius: 0 8px 8px 0;
         }
         
         .testimonial-author {
             font-weight: bold;
             text-align: right;
             margin-top: 10px;
+            color: #8e6d8b;
         }
         
         /* Bonus Section */
@@ -174,12 +224,24 @@
         
         .bonus {
             flex-basis: 30%;
-            background: #f9f0ff;
+            background: #f5f0f9;
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 15px;
             text-align: center;
-            border: 1px dashed #8e2de2;
+            border: 1px solid #e0d0df;
+            position: relative;
+        }
+        
+        .bonus:after {
+            content: "";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background: #d4af37;
+            border-radius: 50%;
         }
         
         /* FAQ Styles */
@@ -189,16 +251,17 @@
         
         .faq-question {
             font-weight: bold;
-            color: #4a00e0;
+            color: #8e6d8b;
         }
         
         /* Footer Styles */
         footer {
             text-align: center;
             padding: 20px;
-            background: #333;
+            background: #8e6d8b;
             color: white;
             margin-top: 40px;
+            border-radius: 0 0 20px 20px;
         }
         
         /* Responsive Adjustments */
@@ -214,80 +277,90 @@
             .subtitle {
                 font-size: 1.1rem;
             }
+            
+            .book-preview {
+                flex-direction: column;
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>🚀 Torne Sua Paixão por Doces em Lucro na Páscoa (e o Ano Inteiro!)</h1>
-            <p class="subtitle">Aprenda a fazer ovos de colher deliciosos e PROFISSIONAIS - mesmo se você está começando do zero!</p>
+            <h1>🍫 Torne Sua Paixão por Doces em Lucro na Páscoa</h1>
+            <p class="subtitle">Aprenda técnicas profissionais para criar ovos de colher premium e lucre até 300%!</p>
         </div>
     </header>
 
     <div class="container">
-        <!-- Limited Offer Section -->
-        <div class="offer-container">
-            <div class="live-badge">🔥 <span id="people-seeing">9</span> PESSOAS VENDO AGORA!</div>
+        <!-- Book Preview Section -->
+        <div class="section">
+            <h2>📚 Conheça Seu Novo Guia de Ovos de Colher</h2>
             
-            <h2 style="color: #ff0000; margin-top: 0;">OFERTA RELÂMPAGO: 30% DE DESCONTO!</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 5px;"><s>De R$ 97,90</s></p>
-            <p style="font-size: 2rem; font-weight: bold; color: #ff0000; margin: 5px 0;">POR APENAS R$ 67,90</p>
-            <p style="font-size: 1.1rem;">ou 3x de R$ 22,63</p>
-            
-            <div class="countdown">
-                🔴 RESTAM APENAS <span id="copies-left" class="highlight">10</span> CÓPIAS!<br>
-                ⏳ TEMPO RESTANTE: <span id="countdown" class="highlight">10:00</span>
+            <div class="book-preview">
+                <div class="book-cover">
+                    <h3 style="color: #a37c40;">Capa do Ebook</h3>
+                    <img src="capa ebook.jpeg" alt="Ebook Ovos de Colher - Capa" style="max-height: 400px;">
+                    <p style="margin-top: 10px; font-style: italic;">Design premium com fotos profissionais</p>
+                </div>
+                
+                <div class="book-contents">
+                    <h3 style="color: #a37c40;">Sumário Completo</h3>
+                    <img src="sumario ebook.jpeg" alt="Sumário do Ebook" style="max-height: 400px;">
+                    <p style="margin-top: 10px; font-style: italic;">+150 páginas de conteúdo prático</p>
+                </div>
             </div>
-            
-            <button id="main-cta" class="cta-button pulse">QUERO GARANTIR MEU EBOOK AGORA!</button>
-            
-            <p style="font-size: 0.9rem; margin-top: 10px;">✅ Download Imediato • ✅ Garantia de 7 Dias</p>
         </div>
 
-        <!-- Preview Section -->
+        <!-- Why Different Section -->
         <div class="section">
-            <h2>📖 PRÉVIA DO EBOOK – O QUE VOCÊ VAI APRENDER?</h2>
-            
-            <h3>📌 PÁGINA 1 – Introdução ao Mercado dos Ovos de Colher</h3>
+            <h2>✨ Por Que Este Ebook É Diferente?</h2>
             <div class="benefits">
-                <div class="benefit-item">Por que ovos de colher são um negócio lucrativo?</div>
-                <div class="benefit-item">Dados do mercado de chocolates (2025) – Faturamento de R$ 1,2 bilhão!</div>
-                <div class="benefit-item">Técnicas profissionais – Temperagem, moldagem e truques para evitar erros comuns</div>
-                <div class="benefit-item">Kit básico do confeiteiro – Tudo o que você precisa para começar HOJE</div>
+                <div class="benefit-item">Fórmulas testadas em laboratório de chocolatier</div>
+                <div class="benefit-item">Fotos profissionais que vendem sozinhas (use no seu Instagram)</div>
+                <div class="benefit-item">Tabelas de precificação prontas (do caseiro ao premium)</div>
+                <div class="benefit-item">Planilhas editáveis para controle financeiro</div>
+                <div class="benefit-item">Técnicas adaptáveis para qualquer nível de experiência</div>
+                <div class="benefit-item">Bônus exclusivos que você não encontra em outros ebooks</div>
             </div>
             
             <div class="testimonial">
-                "Eu estava prestes a desistir dos doces até descobrir os ovos de colher. Na primeira Páscoa, faturei R$12.000 trabalhando de casa!"
-                <div class="testimonial-author">— Mariana R., ex-enfermeira que hoje tem doceria própria</div>
+                "Comprei 3 e-books antes desse. Só esse me mostrou como calcular exatamente quanto cobrar. Valeu cada centavo!"
+                <div class="testimonial-author">— Ricardo T., que multiplicou seu faturamento</div>
             </div>
-            
-            <h3>📌 PÁGINA 2 – Gestão Financeira e Precificação</h3>
+        </div>
+
+        <!-- For Whom Section -->
+        <div class="section">
+            <h2>👩‍🍳 Para Quem É Este Ebook?</h2>
             <div class="benefits">
-                <div class="benefit-item">Planilha de custos detalhada (tamanhos 200g/300g/500g)</div>
-                <div class="benefit-item">Como precificar para ter 100%+ de lucro</div>
-                <div class="benefit-item">3 Armadilhas Financeiras que Destroem Iniciantes</div>
+                <div class="benefit-item">Iniciantes que querem começar a vender ovos de colher</div>
+                <div class="benefit-item">Confeiteiros que desejam aumentar seu faturamento</div>
+                <div class="benefit-item">Empreendedores buscando uma renda extra na Páscoa</div>
+                <div class="benefit-item">Pessoas que querem presentear com produtos artesanais</div>
+                <div class="benefit-item">Quem busca receitas diferenciadas (veganas, low-carb, etc.)</div>
+                <div class="benefit-item">Profissionais que querem se destacar no mercado</div>
+            </div>
+        </div>
+
+        <!-- Limited Offer Section -->
+        <div class="offer-container">
+            <div class="live-badge">👀 <span id="people-seeing">12</span> PESSOAS VENDO AGORA!</div>
+            
+            <h2 style="color: #a37c40; margin-top: 0;">OFERTA EXCLUSIVA: 30% DE DESCONTO!</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 5px;"><s>De R$ 97,90</s></p>
+            <p style="font-size: 2rem; font-weight: bold; color: #a37c40; margin: 5px 0;">POR APENAS R$ 67,90</p>
+            <p style="font-size: 1.1rem;">ou 3x de R$ 23,37</p>
+            
+            <div class="countdown">
+                ✨ RESTAM APENAS <span id="copies-left" class="highlight">10</span> CÓPIAS!<br>
+                ⏳ TEMPO RESTANTE: <span id="countdown" class="highlight">10:00</span>
             </div>
             
-            <h4>📊 Exemplo de Precificação (Ovo de Brigadeiro 300g)</h4>
-            <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
-                <tr style="background-color: #f0f0f0;">
-                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Item</th>
-                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Custo</th>
-                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Preço de Venda</th>
-                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Lucro</th>
-                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Margem</th>
-                </tr>
-                <tr>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Matéria-prima</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">R$ 8,20</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">R$ 35,00</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">R$ 19,80</td>
-                    <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold; color: #4CAF50;">130%</td>
-                </tr>
-            </table>
+            <a href="https://pay.hotmart.com/H99051660G" class="cta-button pulse">QUERO MEU EBOOK COM DESCONTO!</a>
             
-            <p><strong>🔹 Você pode vender 20 unidades e lucrar R$ 396 em um final de semana!</strong></p>
+            <p style="font-size: 0.9rem; margin-top: 10px;">✅ Download Imediato • ✅ Garantia de 7 Dias</p>
         </div>
 
         <!-- Bonuses Section -->
@@ -311,39 +384,15 @@
 
         <!-- Content Highlights -->
         <div class="section">
-            <h2>🔥 O QUE MAIS VOCÊ VAI ENCONTRAR NO EBOOK?</h2>
+            <h2>🔥 O QUE VOCÊ VAI APRENDER?</h2>
             <div class="benefits">
                 <div class="benefit-item">7 Receitas Passo a Passo (Brigadeiro Gourmet, Vegano, Low-Carb, Ninho com Morango e mais!)</div>
                 <div class="benefit-item">Técnicas Profissionais (Temperagem, moldagem e solução de problemas)</div>
                 <div class="benefit-item">Estratégias de Venda (Como divulgar no Instagram, feiras e cafés)</div>
                 <div class="benefit-item">Planilhas Prontas (Controle de custos, estoque e lucro)</div>
+                <div class="benefit-item">Como embalar como um profissional</div>
+                <div class="benefit-item">A estratégia de "preço psicológico" que aumentou vendas em 170%</div>
             </div>
-        </div>
-
-        <!-- Why Different Section -->
-        <div class="section">
-            <h2>💡 POR QUE ESSE EBOOK É DIFERENTE?</h2>
-            <div class="benefits">
-                <div class="benefit-item">Fórmulas testadas em laboratório de chocolatier</div>
-                <div class="benefit-item">Fotos que vendem sozinhas (use no seu Instagram)</div>
-                <div class="benefit-item">Tabelas de precificação prontas (do caseiro ao premium)</div>
-            </div>
-            
-            <div class="testimonial">
-                "Comprei 3 e-books antes desse. Só esse me mostrou como calcular exatamente quanto cobrar. Valeu cada centavo!"
-                <div class="testimonial-author">— Ricardo T., que multiplicou seu faturamento</div>
-            </div>
-        </div>
-
-        <!-- Final CTA Section -->
-        <div class="section" style="text-align: center; background: linear-gradient(135deg, #f5f7fa, #e4e8f0);">
-            <h2 style="color: #ff0000;">🎯 OFERTA IRRECUSÁVEL</h2>
-            <p style="font-size: 1.2rem;"><s>Preço Normal: R$ 97,90</s></p>
-            <p style="font-size: 2rem; font-weight: bold; color: #ff0000;">Preço Promocional: R$ 67,90</p>
-            <p style="font-size: 1.1rem;">ou 3x de R$ 22,63</p>
-            <p style="font-size: 1.1rem; color: #ff0000; font-weight: bold;">⏰ Oferta válida até <span id="expiry-date"></span></p>
-            
-            <button class="cta-button pulse" style="font-size: 1.3rem; padding: 18px 35px;">QUERO APRENDER E LUCRAR AGORA!</button>
         </div>
 
         <!-- FAQ Section -->
@@ -370,7 +419,7 @@
         <div style="text-align: center; margin: 40px 0;">
             <h2 style="color: #ff0000;">📢 NÃO PERCA ESSA OPORTUNIDADE!</h2>
             <p style="font-size: 1.2rem; margin-bottom: 20px;">Milhares de pessoas já transformaram sua paixão por doces em renda extra. Agora é sua vez!</p>
-            <button class="cta-button pulse" style="font-size: 1.3rem; padding: 18px 35px;">GARANTA SEU EBOOK COM DESCONTO AGORA!</button>
+            <a href="https://pay.hotmart.com/H99051660G" class="cta-button pulse">GARANTA SEU EBOOK COM DESCONTO AGORA!</a>
         </div>
     </div>
 
@@ -384,11 +433,6 @@
         // Countdown Timer
         let timeLeft = 600; // 10 minutes in seconds
         let copiesLeft = 10;
-        
-        // Set expiry date (3 days from now)
-        const expiryDate = new Date();
-        expiryDate.setDate(expiryDate.getDate() + 3);
-        document.getElementById('expiry-date').textContent = expiryDate.toLocaleDateString('pt-BR');
         
         // Update countdown every second
         const countdownInterval = setInterval(() => {
@@ -412,23 +456,18 @@
             }
         }, 1000);
         
-        // Simulate people viewing
+        // Simulate people viewing (updates every 7 seconds as requested)
         setInterval(() => {
             document.getElementById('people-seeing').textContent = 
-                Math.floor(Math.random() * 7) + 8; // Random between 8-14
-        }, 3000);
+                Math.floor(Math.random() * 7) + 10; // Random between 10-16
+        }, 7000);
         
         // Decrease copies when CTA is clicked
         document.querySelectorAll('.cta-button').forEach(button => {
             button.addEventListener('click', function(e) {
-                e.preventDefault();
-                
                 if (copiesLeft > 0) {
                     copiesLeft--;
                     document.getElementById('copies-left').textContent = copiesLeft;
-                    
-                    // Here you would normally redirect to payment
-                    alert("Redirecionando para a página de pagamento...");
                     
                     if (copiesLeft === 0) {
                         clearInterval(countdownInterval);
