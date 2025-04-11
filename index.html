@@ -257,7 +257,7 @@
             display: block;
         }
         
-        /* Video Container Vertical - ATUALIZADO */
+        /* Video Container Vertical */
         .video-container-vertical {
             position: relative;
             width: 100%;
@@ -359,6 +359,11 @@
                 padding: 14px 20px;
                 font-size: 1.1rem;
             }
+
+            .price-comparison {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         /* Exit Popup Styles */
@@ -401,6 +406,54 @@
             background: none;
             border: none;
         }
+
+        /* Novos estilos adicionados */
+        .investment-container {
+            text-align: center; 
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .price-comparison {
+            display: flex; 
+            justify-content: center; 
+            align-items: flex-end; 
+            margin: 25px 0;
+        }
+        
+        .price-bar {
+            text-align: center; 
+            margin: 0 15px;
+        }
+        
+        .cumulative-yes {
+            background: #E8F5E9; 
+            padding: 20px; 
+            border-radius: 10px; 
+            margin: 20px 0;
+            border-left: 4px solid #2E7D32;
+        }
+
+        .floating-guarantee {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 999;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -413,7 +466,7 @@
     </header>
 
     <div class="container">
-        <!-- Seção de Galeria Visual - AGORA A PRIMEIRA SEÇÃO -->
+        <!-- Seção 1: Galeria Visual -->
         <div class="section">
             <h2>🍫 Veja Ovos de Colher Feitos com Este Método</h2>
             
@@ -436,7 +489,19 @@
             <p style="text-align: center; font-style: italic;">Assista acima o processo completo de preparo (vídeo de 1 minuto)</p>
         </div>
 
-        <!-- Book Preview Section - AGORA SEGUNDA SEÇÃO -->
+        <!-- Seção 2: Técnica do "Sim" Cumulativo -->
+        <div class="cumulative-yes">
+            <h4 style="text-align: center; color: #2E7D32;">Você já passou por isso?</h4>
+            <ul style="list-style-type: none; padding: 0;">
+                <li style="padding: 8px 0; border-bottom: 1px dashed #C8E6C9;">✔️ Já tentou vender doces mas não teve lucro?</li>
+                <li style="padding: 8px 0; border-bottom: 1px dashed #C8E6C9;">✔️ Não sabe como precificar corretamente?</li>
+                <li style="padding: 8px 0; border-bottom: 1px dashed #C8E6C9;">✔️ Quer uma renda extra mas não tem tempo?</li>
+                <li style="padding: 8px 0;">✔️ Precisa de receitas que realmente vendem?</li>
+            </ul>
+            <p style="text-align: center; font-weight: bold; margin-top: 15px; color: #D32F2F;">SE RESPONDEU "SIM", SEU LUGAR É AQUI 👇</p>
+        </div>
+
+        <!-- Seção 3: Book Preview -->
         <div class="section">
             <h2>Conheça Seu Novo Guia de Ovos de Colher</h2>
             
@@ -455,7 +520,73 @@
             </div>
         </div>
 
-        <!-- For Whom Section - AGORA TERCEIRA SEÇÃO -->
+        <!-- Seção 4: Comparação Visual de Preço -->
+        <div class="section">
+            <h2>💰 Compare e Veja a Economia</h2>
+            <div class="price-comparison">
+                <div class="price-bar">
+                    <div style="height: 50px; background: #E0E0E0; width: 40px;"></div>
+                    <p style="margin-top: 5px;">Cursos Presenciais<br><s>R$ 300+</s></p>
+                </div>
+                <div class="price-bar">
+                    <div style="height: 120px; background: #4CAF50; width: 60px; position: relative;">
+                        <div style="position: absolute; bottom: 0; width: 100%; background: #81C784; height: 30%;"></div>
+                    </div>
+                    <p style="margin-top: 5px; font-weight: bold;">Seu Ebook<br>R$ 67,90</p>
+                </div>
+                <div class="price-bar">
+                    <div style="height: 80px; background: #E0E0E0; width: 40px;"></div>
+                    <p style="margin-top: 5px;">Outros Ebooks<br><s>R$ 97+</s></p>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 0.9rem; color: #666;">Economize até <strong>70%</strong> em relação a outras formas de aprendizado</p>
+        </div>
+
+        <!-- Seção 5: Oferta com Contador de Benefícios -->
+        <div class="offer-container">
+            <div class="investment-container">
+                <p style="font-size: 1.1rem;">Seu investimento hoje:</p>
+                <div style="font-size: 2.5rem; font-weight: bold; color: #4CAF50;">R$ 0,27</div>
+                <p style="font-size: 0.9rem;">por dia (considerando 1 ano de uso)</p>
+                <p style="font-size: 0.8rem; color: #666;">Menos que 1 cafézinho!</p>
+            </div>
+            
+            <div class="live-badge">👀 <span id="people-seeing">12</span> PESSOAS VENDO AGORA!</div>
+            
+            <h2 style="color: #a37c40; margin-top: 0;">OFERTA EXCLUSIVA: 30% DE DESCONTO!</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 5px;"><s>De R$ 97,90</s></p>
+            <p style="font-size: 2rem; font-weight: bold; color: #a37c40; margin: 5px 0;">POR APENAS R$ 67,90</p>
+            <p style="font-size: 1.1rem;">ou 3x de R$ 24,23</p>
+            
+            <div class="countdown">
+                ✨ RESTAM APENAS <span id="copies-left" class="highlight">10</span> CÓPIAS!<br>
+                ⏳ TEMPO RESTANTE: <span id="countdown" class="highlight">10:00</span>
+            </div>
+            
+            <a href="https://pay.hotmart.com/H99051660G" class="cta-button pulse">🚀 QUERO LUCRAR AGORA NA PÁSCOA!</a>
+            
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 15px 0;">
+                <img src="Compra Segura.png" alt="Compra Segura" style="height: 60px;">
+                <img src="Garantia de 7 Dias.png" alt="Garantia de 7 Dias" style="height: 60px;">
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; margin: 25px 0;">
+                <div>
+                    <div style="font-size: 2rem;">🔒</div>
+                    <p style="font-size: 0.9rem;">Pagamento<br>100% Seguro</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem;">⏱️</div>
+                    <p style="font-size: 0.9rem;">Acesso<br>Imediato</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem;">📞</div>
+                    <p style="font-size: 0.9rem;">Suporte<br>24/7</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção 6: Para Quem É Este Ebook? -->
         <div class="section">
             <h2>👩‍🍳 Para Quem É Este Ebook?</h2>
             <div class="benefits">
@@ -468,7 +599,7 @@
             </div>
         </div>
 
-        <!-- Seção de Depoimentos Ampliada - AGORA QUARTA SEÇÃO -->
+        <!-- Seção 7: Depoimentos -->
         <div class="section">
             <h2>🌟 O Que Quem Comprou Está Dizendo</h2>
             
@@ -498,7 +629,6 @@
                 </div>
             </div>
             
-            <!-- Selo de Avaliação -->
             <div style="text-align: center; margin-top: 20px;">
                 <div style="display: inline-block; background: #f5f0f9; padding: 15px 25px; border-radius: 50px; border: 2px dashed #d4af37;">
                     <div class="stars" style="font-size: 1.5rem;">★★★★★</div>
@@ -507,7 +637,7 @@
             </div>
         </div>
 
-        <!-- Why Different Section - AGORA QUINTA SEÇÃO -->
+        <!-- Seção 8: Por Que Este Ebook É Diferente? -->
         <div class="section">
             <h2>✨ Por Que Este Ebook É Diferente?</h2>
             <div class="benefits">
@@ -520,33 +650,7 @@
             </div>
         </div>
 
-        <!-- Limited Offer Section - AGORA SEXTA SEÇÃO -->
-        <div class="offer-container">
-            <div class="live-badge">👀 <span id="people-seeing">12</span> PESSOAS VENDO AGORA!</div>
-            
-            <h2 style="color: #a37c40; margin-top: 0;">OFERTA EXCLUSIVA: 30% DE DESCONTO!</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 5px;"><s>De R$ 97,90</s></p>
-            <p style="font-size: 2rem; font-weight: bold; color: #a37c40; margin: 5px 0;">POR APENAS R$ 67,90</p>
-            <p style="font-size: 1.1rem;">ou 3x de R$ 24,23</p>
-            
-            <div class="countdown">
-                RESTAM APENAS <span id="copies-left" class="highlight">10</span> CÓPIAS!<br>
-                ⏳ TEMPO RESTANTE: <span id="countdown" class="highlight">10:00</span>
-            </div>
-            
-            <a href="https://pay.hotmart.com/H99051660G" class="cta-button pulse">🚀 QUERO LUCRAR AGORA NA PÁSCOA!</a>
-            
-            <!-- Selos de Confiança - ATUALIZADO COM IMAGENS REAIS -->
-            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 15px 0;">
-                <img src="Compra Segura.png" alt="Compra Segura" style="height: 60px;">
-                <img src="Garantia de 7 Dias.png" alt="Garantia de 7 Dias" style="height: 60px;">
-            </div>
-            <p style="text-align: center; font-size: 0.8em; color: #7b8b9b;">
-                ✔ Pagamento 100% seguro via Hotmart • ✔ Suporte 24h
-            </p>
-        </div>
-
-        <!-- Bonuses Section - AGORA SÉTIMA SEÇÃO -->
+        <!-- Seção 9: Bônus -->
         <div class="section">
             <h2>🎁 BÔNUS EXCLUSIVOS (GRÁTIS!)</h2>
             <div class="benefits">
@@ -556,7 +660,7 @@
             </div>
         </div>
 
-        <!-- Content Highlights - AGORA OITAVA SEÇÃO -->
+        <!-- Seção 10: O Que Você Vai Aprender? -->
         <div class="section">
             <h2>🔥 O QUE VOCÊ VAI APRENDER?</h2>
             <div class="benefits">
@@ -569,7 +673,7 @@
             </div>
         </div>
 
-        <!-- FAQ Section - AGORA NONA SEÇÃO -->
+        <!-- Seção 11: FAQ -->
         <div class="section">
             <h2>PERGUNTAS FREQUENTES</h2>
             
@@ -589,11 +693,11 @@
             </div>
         </div>
 
-        <!-- Final CTA - AGORA DÉCIMA SEÇÃO -->
+        <!-- Seção 12: CTA Final -->
         <div style="text-align: center; margin: 40px 0;">
             <h2 style="color: #ff0000;">📢 NÃO PERCA ESSA OPORTUNIDADE!</h2>
             <p style="font-size: 1.2rem; margin-bottom: 20px;">Milhares de pessoas já transformaram sua paixão por doces em renda extra. Agora é sua vez!</p>
-            <a href="https://pay.hotmart.com/H99051660G" class="cta-button pulse">GARANTA SEU EBOOK AGORA - 30% OFF!</a>
+            <a href="https://pay.hotmart.com/H99051660G" class="cta-button pulse">GARANTA SEU EBOOK COM DESCONTO AGORA!</a>
         </div>
     </div>
 
@@ -602,6 +706,12 @@
             <p>© 2025 - Ebook Ovos de Colher | Todos os direitos reservados</p>
         </div>
     </footer>
+
+    <!-- Selo Flutuante de Garantia -->
+    <div class="floating-guarantee">
+        <img src="Garantia-de-7-dias.png" alt="Garantia" style="width: 120px;">
+        <p style="font-size: 0.8rem; margin-top: 5px; text-align: center;">7 dias de garantia</p>
+    </div>
 
     <!-- Exit Popup -->
     <div id="exit-popup">
@@ -697,6 +807,33 @@
                 this.style.display = 'none';
             }
         });
+
+        // Atualiza compradores recentes
+        const names = ['Roberta', 'Luiz', 'Fernanda', 'José', 'Amanda', 'Ricardo'];
+        const states = ['SP', 'RJ', 'MG', 'RS', 'PR', 'SC'];
+
+        setInterval(() => {
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const randomState = states[Math.floor(Math.random() * states.length)];
+            const minutes = Math.floor(Math.random() * 10) + 1;
+            
+            const salesDiv = document.createElement('div');
+            salesDiv.innerHTML = `
+                <p>🛒 <strong>Compradores recentes:</strong></p>
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+                    <div style="background: white; padding: 5px 10px; border-radius: 15px; font-size: 0.8rem;">
+                        ${randomName} (${randomState}) - ${minutes} min
+                    </div>
+                </div>
+            `;
+            
+            const container = document.querySelector('.offer-container');
+            if (container.querySelector('#recent-sales')) {
+                container.querySelector('#recent-sales').remove();
+            }
+            salesDiv.id = 'recent-sales';
+            container.insertBefore(salesDiv, container.querySelector('.countdown'));
+        }, 15000);
     </script>
 </body>
 </html>
