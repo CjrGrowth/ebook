@@ -438,13 +438,13 @@
             
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="https://i.imgur.com/6XyJb5P.jpg" alt="Ovo de Brigadeiro Gourmet">
+                    <img src="LINK_IMAGEM_REAL_1.jpg.jpg" alt="Ovo de Brigadeiro Gourmet">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://i.imgur.com/9QZcY7r.jpg" alt="Ovo Vegano de Cacau">
+                    <img src="LINK_IMAGEM_REAL_2.jpg.jpg" alt="Ovo Vegano de Cacau">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://i.imgur.com/vVJpK9h.jpg" alt="Embalagem Profissional">
+                    <img src="LINK_IMAGEM_REAL_3.jpg.jpg" alt="Embalagem Profissional">
                 </div>
             </div>
             
@@ -536,10 +536,10 @@
             
             <a href="https://pay.hotmart.com/H99051660G" class="cta-button pulse">🚀 QUERO APRENDER E VENDER MAIS!</a>
             
-            <!-- Selos de Confiança - Atualizado -->
+            <!-- Selos de Confiança - ATUALIZADO COM IMAGENS REAIS -->
             <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 15px 0;">
-                <img src="https://i.imgur.com/JQ9wG1p.png" alt="Compra Segura" style="height: 40px;">
-                <img src="https://i.imgur.com/LnKjXyb.png" alt="Garantia de 7 Dias" style="height: 40px;">
+                <img src="Compra Segura" alt="Compra Segura" style="height: 60px;">
+                <img src="Garantia de 7 Dias" alt="Garantia de 7 Dias" style="height: 60px;">
             </div>
             <p style="text-align: center; font-size: 0.8em; color: #7b8b9b;">
                 ✔ Pagamento 100% seguro via Hotmart • ✔ Suporte 24h
@@ -621,8 +621,6 @@
         let timeLeft = 600; // 10 minutes in seconds
         let copiesLeft = 10;
         let hasShownExitPopup = false;
-        let mousePosition = { x: 0, y: 0 };
-        let isMovingToExit = false;
         
         // Update countdown every second
         const countdownInterval = setInterval(() => {
@@ -678,46 +676,26 @@
             });
         });
         
-        // Exit Popup Logic - Atualizado para aparecer apenas ao sair
+        // Exit Popup Logic - APENAS ao fechar/voltar
+        window.addEventListener('beforeunload', function(e) {
+            if (!hasShownExitPopup) {
+                e.preventDefault();
+                document.getElementById('exit-popup').style.display = 'flex';
+                hasShownExitPopup = true;
+                return "Tem certeza que deseja sair? Temos uma oferta especial para você!";
+            }
+        });
+
+        // Fechar popup quando clicar no X
         document.querySelector('.close-popup').addEventListener('click', function() {
             document.getElementById('exit-popup').style.display = 'none';
         });
-        
-        // Track mouse movement
-        document.addEventListener('mousemove', function(e) {
-            mousePosition = { x: e.clientX, y: e.clientY };
-            
-            // Check if mouse is moving towards exit (top of page)
-            if (e.clientY < 50 && !hasShownExitPopup) {
-                isMovingToExit = true;
-                setTimeout(() => {
-                    if (isMovingToExit) {
-                        document.getElementById('exit-popup').style.display = 'flex';
-                        hasShownExitPopup = true;
-                        
-                        // Hide popup after 30 seconds if not closed
-                        setTimeout(() => {
-                            if (document.getElementById('exit-popup').style.display === 'flex') {
-                                document.getElementById('exit-popup').style.display = 'none';
-                            }
-                        }, 30000);
-                    }
-                }, 500);
-            } else {
-                isMovingToExit = false;
-            }
-        });
-        
-        // Close popup when clicking outside
+
+        // Fechar popup quando clicar fora
         document.getElementById('exit-popup').addEventListener('click', function(e) {
             if (e.target === this) {
                 this.style.display = 'none';
             }
-        });
-        
-        // Load optimized images
-        document.addEventListener('DOMContentLoaded', function() {
-            // Imagens já substituídas diretamente no HTML
         });
     </script>
 </body>
