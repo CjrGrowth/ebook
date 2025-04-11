@@ -257,7 +257,7 @@
             display: block;
         }
         
-        /* Video Container Vertical */
+        /* Video Container Vertical - ATUALIZADO */
         .video-container-vertical {
             position: relative;
             width: 100%;
@@ -266,6 +266,8 @@
             padding-bottom: 177.78%; /* 9:16 Aspect Ratio */
             height: 0;
             overflow: hidden;
+            border-radius: 8px;
+            background: #000;
         }
         
         .video-container-vertical iframe {
@@ -399,19 +401,6 @@
             background: none;
             border: none;
         }
-        
-        /* Trust Badges */
-        .trust-badges {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 15px 0;
-        }
-        
-        .trust-badge {
-            height: 50px;
-            object-fit: contain;
-        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -449,13 +438,13 @@
             
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="https://i.imgur.com/5QzJY9a.jpg" alt="Ovo de Brigadeiro Gourmet">
+                    <img src="https://i.imgur.com/6XyJb5P.jpg" alt="Ovo de Brigadeiro Gourmet">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://i.imgur.com/8Kt3LbV.jpg" alt="Ovo Vegano de Cacau">
+                    <img src="https://i.imgur.com/9QZcY7r.jpg" alt="Ovo Vegano de Cacau">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://i.imgur.com/vVnX7fP.jpg" alt="Embalagem Profissional">
+                    <img src="https://i.imgur.com/vVJpK9h.jpg" alt="Embalagem Profissional">
                 </div>
             </div>
             
@@ -547,10 +536,10 @@
             
             <a href="https://pay.hotmart.com/H99051660G" class="cta-button pulse">🚀 QUERO APRENDER E VENDER MAIS!</a>
             
-            <!-- Selos de Confiança -->
-            <div class="trust-badges">
-                <img src="https://i.imgur.com/JQ9wG1p.png" alt="Compra Segura" class="trust-badge">
-                <img src="https://i.imgur.com/LnKjXyb.png" alt="Garantia de 7 Dias" class="trust-badge">
+            <!-- Selos de Confiança - Atualizado -->
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 15px 0;">
+                <img src="https://i.imgur.com/JQ9wG1p.png" alt="Compra Segura" style="height: 40px;">
+                <img src="https://i.imgur.com/LnKjXyb.png" alt="Garantia de 7 Dias" style="height: 40px;">
             </div>
             <p style="text-align: center; font-size: 0.8em; color: #7b8b9b;">
                 ✔ Pagamento 100% seguro via Hotmart • ✔ Suporte 24h
@@ -632,7 +621,8 @@
         let timeLeft = 600; // 10 minutes in seconds
         let copiesLeft = 10;
         let hasShownExitPopup = false;
-        let mouseYAtTop = false;
+        let mousePosition = { x: 0, y: 0 };
+        let isMovingToExit = false;
         
         // Update countdown every second
         const countdownInterval = setInterval(() => {
@@ -688,33 +678,33 @@
             });
         });
         
-        // Exit Popup Logic
+        // Exit Popup Logic - Atualizado para aparecer apenas ao sair
         document.querySelector('.close-popup').addEventListener('click', function() {
             document.getElementById('exit-popup').style.display = 'none';
         });
         
         // Track mouse movement
         document.addEventListener('mousemove', function(e) {
-            // Check if mouse is at the top of the page (potential exit intent)
-            if (e.clientY < 50) {
-                mouseYAtTop = true;
-            } else {
-                mouseYAtTop = false;
-            }
-        });
-        
-        // Show popup only on exit intent
-        window.addEventListener('mouseout', function(e) {
-            if (e.relatedTarget === null && mouseYAtTop && !hasShownExitPopup) {
-                document.getElementById('exit-popup').style.display = 'flex';
-                hasShownExitPopup = true;
-                
-                // Hide popup after 30 seconds if not closed
+            mousePosition = { x: e.clientX, y: e.clientY };
+            
+            // Check if mouse is moving towards exit (top of page)
+            if (e.clientY < 50 && !hasShownExitPopup) {
+                isMovingToExit = true;
                 setTimeout(() => {
-                    if (document.getElementById('exit-popup').style.display === 'flex') {
-                        document.getElementById('exit-popup').style.display = 'none';
+                    if (isMovingToExit) {
+                        document.getElementById('exit-popup').style.display = 'flex';
+                        hasShownExitPopup = true;
+                        
+                        // Hide popup after 30 seconds if not closed
+                        setTimeout(() => {
+                            if (document.getElementById('exit-popup').style.display === 'flex') {
+                                document.getElementById('exit-popup').style.display = 'none';
+                            }
+                        }, 30000);
                     }
-                }, 30000);
+                }, 500);
+            } else {
+                isMovingToExit = false;
             }
         });
         
@@ -727,21 +717,7 @@
         
         // Load optimized images
         document.addEventListener('DOMContentLoaded', function() {
-            const images = [
-                { placeholder: 'ovo-brigadeiro.jpg', actual: 'LINK_IMAGEM_REAL_1.jpg.jpg' },
-                { placeholder: 'ovo-vegano.jpg', actual: 'LINK_IMAGEM_REAL_3.jpg.jpg' },
-                { placeholder: 'embalagem-premium.jpg', actual: 'LINK_IMAGEM_REAL_3.jpg.jpg' }
-            ];
-            
-            images.forEach(img => {
-                const elements = document.querySelectorAll(`[src*="${img.placeholder}"]`);
-                elements.forEach(el => {
-                    el.src = img.actual;
-                    el.addEventListener('load', () => {
-                        el.style.opacity = 1;
-                    });
-                });
-            });
+            // Imagens já substituídas diretamente no HTML
         });
     </script>
 </body>
