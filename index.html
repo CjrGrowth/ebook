@@ -359,11 +359,6 @@
                 padding: 14px 20px;
                 font-size: 1.1rem;
             }
-
-            .price-comparison {
-                flex-direction: column;
-                align-items: center;
-            }
         }
 
         /* Exit Popup Styles */
@@ -422,11 +417,15 @@
             justify-content: center; 
             align-items: flex-end; 
             margin: 25px 0;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         
         .price-bar {
             text-align: center; 
-            margin: 0 15px;
+            margin: 0;
+            flex: 1;
+            min-width: 100px;
         }
         
         .cumulative-yes {
@@ -442,17 +441,41 @@
             bottom: 20px;
             right: 20px;
             background: white;
-            padding: 15px;
+            padding: 10px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             z-index: 999;
             animation: float 3s ease-in-out infinite;
+            width: 80px;
         }
         
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
+        }
+
+        /* Ajustes para mobile */
+        @media (max-width: 480px) {
+            .floating-guarantee {
+                width: 70px;
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .floating-guarantee img {
+                width: 100%;
+                height: auto;
+            }
+            
+            .floating-guarantee p {
+                font-size: 0.7rem;
+                margin-top: 3px;
+            }
+            
+            .price-bar {
+                min-width: 80px;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -525,17 +548,17 @@
             <h2>💰 Compare e Veja a Economia</h2>
             <div class="price-comparison">
                 <div class="price-bar">
-                    <div style="height: 50px; background: #E0E0E0; width: 40px;"></div>
+                    <div style="height: 50px; background: #E0E0E0; width: 100%;"></div>
                     <p style="margin-top: 5px;">Cursos Presenciais<br><s>R$ 300+</s></p>
                 </div>
                 <div class="price-bar">
-                    <div style="height: 120px; background: #4CAF50; width: 60px; position: relative;">
+                    <div style="height: 120px; background: #4CAF50; width: 100%; position: relative;">
                         <div style="position: absolute; bottom: 0; width: 100%; background: #81C784; height: 30%;"></div>
                     </div>
                     <p style="margin-top: 5px; font-weight: bold;">Seu Ebook<br>R$ 67,90</p>
                 </div>
                 <div class="price-bar">
-                    <div style="height: 80px; background: #E0E0E0; width: 40px;"></div>
+                    <div style="height: 80px; background: #E0E0E0; width: 100%;"></div>
                     <p style="margin-top: 5px;">Outros Ebooks<br><s>R$ 97+</s></p>
                 </div>
             </div>
@@ -697,7 +720,7 @@
         <div style="text-align: center; margin: 40px 0;">
             <h2 style="color: #ff0000;">📢 NÃO PERCA ESSA OPORTUNIDADE!</h2>
             <p style="font-size: 1.2rem; margin-bottom: 20px;">Milhares de pessoas já transformaram sua paixão por doces em renda extra. Agora é sua vez!</p>
-            <a href="https://pay.hotmart.com/H99051660G" class="cta-button pulse">GARANTA SEU EBOOK COM DESCONTO AGORA!</a>
+            <a href="https://pay.hotmart.com/H99051660G" class="cta-button pulse">GARANTA SEU EBOOK COM DESCONTO 30% OFF!</a>
         </div>
     </div>
 
@@ -709,8 +732,8 @@
 
     <!-- Selo Flutuante de Garantia -->
     <div class="floating-guarantee">
-        <img src=" Selo-Garantia-de-7-dias.png" alt="Garantia" style="width: 120px;">
-        <p style="font-size: 0.8rem; margin-top: 5px; text-align: center;">7 dias de garantia</p>
+        <img src="Selo-Garantia-de-7-dias.png" alt="Garantia" style="width: 100%;">
+        <p style="font-size: 0.7rem; margin-top: 3px; text-align: center;">7 dias de garantia</p>
     </div>
 
     <!-- Exit Popup -->
